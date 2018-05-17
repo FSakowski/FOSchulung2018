@@ -1,0 +1,22 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB02.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+..<BLOCK>   Variablen
+.type bool xbAktiv          ? _F|defined(U|xbAktiv)
+..</BLOCK>
+
+.formula U|xbAktiv = G|false
+..
+.continue START             ? U|xbAktiv
+.continue
+!START
+.box
+Ueb 02!
+..

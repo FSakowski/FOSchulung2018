@@ -1,0 +1,28 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB05.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.output E
+.input EXCEL.F
+..
+.formula U|xtSel = "$,,@group=1.2;@filingmode=(Active)"
+..<META H|='P0' >
+.println Nummer;Name
+.select nolock customer 'U|xtSel'
+!LOOP
+.continue ELOOP     ? _G|mehr
+.continue NEXT      ? _F|defined(H|namebspr)
+.println 'H|nummer';'H|namebspr'
+!NEXT
+.select nolock continue
+.continue LOOP
+
+!ELOOP
+.continue

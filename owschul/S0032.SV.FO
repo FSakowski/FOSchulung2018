@@ -1,0 +1,16 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		S0032.SV.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+..<META M|='P3:22' >
+.set debug +
+.select screen line 'M|tzeilen'
+.make screen line +
+.formula M|artikel = "SU."
+.continue

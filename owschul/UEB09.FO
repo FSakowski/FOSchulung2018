@@ -1,0 +1,20 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB09.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtAuswahl
+.menu Bitte ausw„hlen:
+Eigenfertigung >> .formula U|xtAuswahl = "Eigen"
+Fremdbeschaffung >> .formula U|xtAuswahl = "Fremd"
+Abbrechen
+..
+.continue   ? U|xtAuswahl = ""
+.box
+Sie haben ausgew„hlt: 'U|xtAuswahl'
+.continue

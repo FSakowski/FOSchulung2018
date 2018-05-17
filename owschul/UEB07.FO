@@ -1,0 +1,38 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB07.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.type text xtSelKontakt
+.formula U|xtSel = "$,,@gruppe=1;@ablageart=(Active)"
+..
+..<META 1|='P1:1' >
+.load 1 nolock supplier 'U|xtSel'
+!LOOP
+.continue ELOOP         ? _G|mehr
+..
+.println '1|nummer';'1|namebspr'
+..
+.formula U|xtSelKontakt = "$,,@gruppe=2;firma==" + '1|id'
+..<META 2|='P1:2' >
+.load 2 nolock supplier 'U|xtSelKontakt'
+!LOOP2
+.continue ELOOP2        ? _G|mehr
+..
+.println '2|nummer';'2|ans'
+.load 2 nolock continue
+.continue LOOP2
+
+!ELOOP2
+..
+.load 1 nolock continue
+.continue LOOP
+
+!ELOOP
+.continue

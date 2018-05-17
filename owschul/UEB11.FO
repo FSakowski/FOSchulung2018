@@ -1,0 +1,36 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB11.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.set decpoint ","
+.println 'G|bsprache(L=":")'
+.println 'G|mandant'
+.println 'G|datum' 'G|zeit'
+..<META D|='P12:11' >
+.add G|passw
+.println 'D|abteilung'
+.formula U|xtSel = "$,,@group=22;@filingmode=(Active);"
+..<META H|='P3:22' >
+.select nolock sales 'U|xtSel'
+!LOOP
+.continue ELOOP     ? _G|mehr
+.println 'H|nummer' 'H|kunde' 'H|kundename' 'H|sumnetto'
+!LOOP2
+.select nolock line
+.continue NEXTAU    ? _G|mehr
+.println 'H|pnum' 'H|artikel' 'H|tename' 'H|mge' 'H|he'
+.continue LOOP2
+..
+!NEXTAU
+.select nolock continue
+.continue LOOP
+
+!ELOOP
+.continue

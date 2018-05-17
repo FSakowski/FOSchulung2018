@@ -1,0 +1,46 @@
+..!interpreter english declaration noabbrev englvar
+
+..============================================================================
+..  Author             : Koeln00
+..  Date of Creation   : 25.04.2018
+..  Name               : UEB02F2.FO2
+..  Path/Pfad          : workdir/UEB02F2.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : 
+..
+..============================================================================
+..<VAR folded>
+.var bool xbAktiv = G|false
+..</VAR>
+
+def main(){
+    if (F|defined(U|xbAktiv)) {
+        .formula U|xbAktiv = G|true
+    }
+    .. Kommentar
+    if (U|xbAktiv) {
+        .call ausgabe1()
+    } else {
+        .call ausgabe2()
+    }
+    
+}
+
+def ausgabe1() {
+    .box
+    .item "Aktiv"
+    .endItem
+}
+
+def ausgabe2() {
+    .box
+    .item "Nicht aktiv"
+    .endItem
+}

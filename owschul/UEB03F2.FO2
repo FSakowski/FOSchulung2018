@@ -1,0 +1,29 @@
+..!interpreter english declaration noabbrev englvar
+
+..============================================================================
+..  Author             : Koeln00
+..  Date of Creation   : 25.04.2018
+..  Name               : UEB03F2.FO2
+..  Path/Pfad          : workdir/UEB03F2.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : 
+..
+..============================================================================
+..<VAR folded>
+.var integer xi = 1
+..</VAR>
+
+def main(){
+    .set debug +
+    while(U|xi <= 10) {
+        .println U|xi: 'U|xi'
+        .formula U|xi = U|xi + 1
+    }
+}

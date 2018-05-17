@@ -1,0 +1,25 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB04.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.type text xtNr
+.formula U|xtNr = "30038!30050"
+.formula U|xtSel = "$,,nummer=" + U|xtNr + ";@gruppe=1;@ablageart=(Active)"
+..
+..<META H|='P2:1' >
+.select nolock parts 'U|xtSel'
+.continue NF            ? _G|mehr
+.println 'H|nummer';'H|namebspr'
+.select nolock continue
+.println 'H|nummer';'H|namebspr'
+.continue
+!NF
+.println Nicht gefunden
+.continue

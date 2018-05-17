@@ -1,0 +1,28 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB03.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.output E
+.input EXCEL.F
+.type integer xi
+.formula U|xi = 1
+..<BLOCK>   Schleife
+.println Zahl;Zahl
+..*****************************************************************************
+!LOOP: Schleifenbeginn
+..*****************************************************************************             
+.println Zahl;'U|xi'
+.formula U|xi = U|xi + 1
+.continue LOOP              ? U|xi <= 10
+!ELOOP : comment
+..*****************************************************************************
+..</BLOCK>
+.output terminal
+.println Test
+.continue

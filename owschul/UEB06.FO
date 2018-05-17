@@ -1,0 +1,36 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB06.FO
+.. Date : 			25.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.type text xtLief
+.output E
+.input EXCEL.F
+..
+.formula U|xtSel = "$,,bsart==Fremdbeschaffung;@group=1;@filingmode=(Active)"
+..<META H|='P2:1' >
+.println Identnummer;Bezeichnung;Beschaffungsart;Lieferant-Nr;Lieferant-Name
+.select nolock parts 'U|xtSel'
+!LOOP
+.continue ELOOP     ? _G|mehr
+.continue NEXT      ? _F|defined(H|namebspr)
+..<META D|='P1:1.2' >
+.add H|lief
+.continue NEXT      ? _G|mehr
+..<META 0|='P1:1.2' >
+.load 0 supplier 'H|lief2^id'
+.formula U|xtLief = "" 
+.formula U|xtLief = 0|namebspr  ? G|mehr
+.println 'H|nummer';'H|namebspr';'H|bsart';'D|nummer';'D|namebspr';'U|xtLief'
+!NEXT
+.select nolock continue
+.continue LOOP
+
+!ELOOP
+.continue

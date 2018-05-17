@@ -1,0 +1,33 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB13.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtDatei
+.type text xtTxt xtTxt2
+.type text xtSys
+.file -tempname U|xtDatei
+.output new 'U|xtDatei'
+.input DATEI.F
+.println TestîÑîÅîÑî
+.println abc
+.output terminal
+.box
+'U|xtDatei' 
+..
+.select from 'U|xtDatei' U|xtTxt^
+.select from 'U|xtDatei' U|xtTxt2^
+.box
+'U|xtTxt'
+'U|xtTxt2'
+..
+.formula U|xtSys = "s3_conv -m 11 -w " + U|xtDatei
+.system 'U|xtSys' background
+.formula U|xtSys = "cp " + U|xtDatei + " win/tmp/text.txt"
+.system 'U|xtSys' background
+.pc.open -file "win/tmp/text.txt"

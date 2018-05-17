@@ -1,0 +1,40 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB10.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtAuswahl
+.type text xtVon
+.type text xtBis
+.type text xtEingabe
+..
+.menu Bitte ausw„hlen:
+Eigenfertigung >> .formula U|xtAuswahl = "Eigen"
+Fremdbeschaffung >> .formula U|xtAuswahl = "Fremd"
+Abbrechen
+..
+.continue   ? F|empty(U|xtAuswahl)
+..
+!EING
+.read "Bitte Berech eingeben:" U|xtVon U|xtBis
+.continue EING  ? _F|isvalue(U|xtVon, "I9")
+.continue EING  ? _F|isvalue(U|xtBis, "I9")
+..
+.formula U|xtEingabe = U|xtVon + "!" + U|xtBis
+..
+.continue EF    ? U|xtAuswahl = "Eigen"
+.continue FB    ? U|xtAuswahl = "Fremd"
+.continue
+..
+!EF
+.input "owschul/UEB10.EF.FO"
+.continue
+
+!FB
+.input "owschul/UEB10.FB.FO"
+.continue

@@ -1,0 +1,40 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB10.EF.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type text xtSel
+.type text xtLief
+.type text xtEingabe    ? _F|defined(U|xtEingabe)
+.output E
+.input EXCEL.F
+..
+.formula U|xtSel = "$,,nummer=" + U|xtEingabe + ";bsart==Eigenfertigung;@group=1;@filingmode=(Active)"
+..<META H|='P2:1' >
+.println Identnummer;Bezeichnung;Beschaffungsart
+.select nolock parts 'U|xtSel'
+!LOOP
+.continue ELOOP     ? _G|mehr
+.continue NEXT      ? _F|defined(H|namebspr)
+.println 'H|nummer';'H|namebspr';'H|bsart'
+..
+!LOOP2
+.select nolock line "$,,mge=2!"
+.continue NEXT      ? _G|mehr
+.continue LOOP2     ? H|elem^dnr <> 2
+..
+..
+.println 'H|elem';'H|elname';'H|elanzahl'
+.continue LOOP2
+..
+!NEXT
+.select nolock continue
+.continue LOOP
+
+!ELOOP
+.continue

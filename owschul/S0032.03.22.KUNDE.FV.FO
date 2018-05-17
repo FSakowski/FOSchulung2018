@@ -1,0 +1,17 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		S0032.03.22.KUNDE.FV.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.continue       ? G|evtkommd <> "neu"
+.continue       ? G|evtartengl <> "FIELD_VALIDATION"
+..<META M|='P3:22' >
+.continue       ? F|empty(M|kunde)
+.continue       ? _F|empty(M|kunde^ustid)
+.error USt-Id fehlt! 
+.end 1

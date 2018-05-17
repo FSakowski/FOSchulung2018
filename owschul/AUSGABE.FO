@@ -1,0 +1,15 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		AUSGABE.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.output E : "v.xltx"
+.println
+.println A;B;C
+.output terminal
+.continue

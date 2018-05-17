@@ -1,0 +1,70 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		UEB12.FO
+.. Date : 			26.04.2018
+.. Author : 		Koeln00
+.. Responsible : 	Koeln00
+.. Supervisor : 	Koeln00
+.. Copyright : (c)  2018
+.. Function : 
+..*****************************************************************************
+.type integer xiZahl1 xiZahl2
+.type realx xrZahl3
+..
+.formula U|xiZahl1 = 2
+.formula U|xiZahl2 = 3
+.formula U|xrZahl3 = U|xiZahl1 / U|xiZahl2
+.println 'U|xrZahl3'
+..
+.type bool xbSchalter1
+.type bool xbSchalter2
+.type bool xbErgebnis
+..
+.formula U|xbSchalter1 = G|true
+.formula U|xbSchalter2 = G|false
+.. _ -> NICHT
+.. & -> UND
+.. ; -> ODER
+.formula U|xbErgebnis = U|xbSchalter1 ; U|xbSchalter2
+.println 'U|xbErgebnis'
+..
+.type text xtTxt1 xtTxt2 xtTxt3
+.formula U|xtTxt1 = "abc  de  /&/&fg"
+.formula U|xiZahl1 = +U|xtTxt1
+.println 'U|xiZahl1'
+.formula U|xtTxt2 = -U|xtTxt1
+.println 'U|xtTxt2'
+..
+.formula U|xtTxt1 = "10001;Schraube;2.0;15.0"
+.formula U|xtTxt2 = (U|xtTxt1 >> ";") << ";"
+.println 'U|xtTxt2'
+..
+.formula U|xtTxt2 = U|xtTxt1 << ";"
+.formula U|xtTxt1 = U|xtTxt1 >> ";"
+.formula U|xtTxt3 = U|xtTxt1 << ";"
+.println 'U|xtTxt2' 'U|xtTxt3'
+.println 'F|strindex("abcd", "bc")' 
+..
+.type GD19 xdDat1 xdDat2
+.formula U|xdDat1 = G|datum
+.formula U|xdDat1 = U|xdDat1 & 2
+'U|xdDat1'
+.formula U|xiZahl1 = U|xdDat1 // 7
+.println 'U|xiZahl1'
+.formula U|xtTxt1 = U|xdDat1 // 1
+.println 'U|xtTxt1'
+..
+.type time xtUhr
+.type int xiMin 
+.formula U|xtUhr = G|zeit
+.formula U|xiMin = 30
+.formula U|xtUhr = U|xtUhr + 30
+.println 'U|xtUhr'
+.formula U|xtUhr = U|xtUhr + 50.0
+.println 'U|xtUhr'
+..
+.formula U|xdDat1 = "26.04.2018 12:00"
+.formula U|xdDat2 = "26.04.2018 15:00"
+.type GP4 xgpDauer
+.formula U|xgpDauer = U|xdDat2 - U|xdDat1
+.println 'U|xgpDauer'
